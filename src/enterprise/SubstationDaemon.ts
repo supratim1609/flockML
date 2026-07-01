@@ -1,4 +1,4 @@
-import { NeuralNetwork } from '../network';
+import { LegacyNeuralNetwork as NeuralNetwork } from './legacy-network';
 import { Quantizer, QuantizedPayload } from '../quantization';
 import { QuantizedGradientPayload } from './PodAggregator';
 import { MasterCoordinator, Task } from './MasterCoordinator';

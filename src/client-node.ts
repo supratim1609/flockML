@@ -1,6 +1,7 @@
 import { NeuralNetwork } from './network';
 import { Quantizer, QuantizedPayload } from './quantization';
 import { DifferentialPrivacy } from './privacy';
+import initWasm, { WasmMatrix } from 'flockml-wasm';
 
 /**
  * The Swarm-AI Client Node.
@@ -10,14 +11,59 @@ import { DifferentialPrivacy } from './privacy';
  * In a full production build, this entire class would be serialized into a Blob 
  * and executed inside a background Web Worker to keep the UI at 60fps.
  */
-export class SwarmNode {
-  network: NeuralNetwork;
+export class FlockNode {
+  network!: NeuralNetwork;
   isConnected: boolean = false;
   isTraining: boolean = false;
   privacyEpsilon: number = 0.5;
+  wasmEngineReady: boolean = false;
+  
+  private inputNodes: number;
+  private hiddenNodes: number;
+  private outputNodes: number;
 
   constructor(inputNodes: number = 2, hiddenNodes: number = 4, outputNodes: number = 1) {
-    this.network = new NeuralNetwork(inputNodes, hiddenNodes, outputNodes);
+    this.inputNodes = inputNodes;
+    this.hiddenNodes = hiddenNodes;
+    this.outputNodes = outputNodes;
+    // Network is instantiated after initWasm()
+  }
+
+  /**
+   * Initializes the high-performance Rust WebAssembly engine.
+   * This must be called before running intensive operations.
+   */
+  async initEngine(): Promise<void> {
+    console.log("[Swarm] Booting Rust WebAssembly Matrix Engine...");
+    await initWasm();
+    this.network = new NeuralNetwork(this.inputNodes, this.hiddenNodes, this.outputNodes);
+    this.wasmEngineReady = true;
+    console.log("[Swarm] Wasm Engine Online (C++ speeds enabled).");
+  }
+
+  /**
+   * Benchmark the Rust Engine vs V8 JavaScript
+   */
+  async benchmarkWasmEngine(): Promise<void> {
+    if (!this.wasmEngineReady) await this.initEngine();
+    
+    console.log("[Swarm] Stress testing Rust Wasm Engine: 1000x1000 Matrix Dot Product...");
+    const start = performance.now();
+    
+    // Allocate massive flat arrays for the Wasm memory boundary
+    const a = new WasmMatrix(1000, 1000);
+    const b = new WasmMatrix(1000, 1000);
+    
+    // One billion operations in Wasm
+    const c = a.dot(b);
+    
+    const end = performance.now();
+    console.log(`[Swarm] Rust Engine completed 1 Billion operations in ${end - start}ms!`);
+    
+    // Free Wasm memory
+    a.free();
+    b.free();
+    c.free();
   }
 
   /**
@@ -39,10 +85,12 @@ export class SwarmNode {
     qBiasH: QuantizedPayload,
     qBiasO: QuantizedPayload
   ): void {
-    this.network.weights_ih = Quantizer.dequantize(qWeightsIH);
-    this.network.weights_ho = Quantizer.dequantize(qWeightsHO);
-    this.network.bias_h = Quantizer.dequantize(qBiasH);
-    this.network.bias_o = Quantizer.dequantize(qBiasO);
+    this.network.loadWeights({
+      weights_ih: Quantizer.dequantize(qWeightsIH),
+      weights_ho: Quantizer.dequantize(qWeightsHO),
+      bias_h: Quantizer.dequantize(qBiasH),
+      bias_o: Quantizer.dequantize(qBiasO)
+    });
   }
 
   /**
@@ -50,7 +98,7 @@ export class SwarmNode {
    * This guarantees that massive matrix operations never freeze the website's UI (60fps).
    */
   async trainLocalBatchAsync(inputs: number[][], targets: number[][]): Promise<void> {
-    if (!this.isConnected) throw new Error("SwarmNode is not connected to a coordinator.");
+    if (!this.isConnected) throw new Error("FlockNode is not connected to a coordinator.");
     
     this.isTraining = true;
     
@@ -83,18 +131,24 @@ export class SwarmNode {
    * Secures and compresses the newly trained weights, ready to be sent to the server.
    */
   exportSecureGradients() {
-    // 2. Apply Differential Privacy (Laplacian Noise) to protect user data
-    DifferentialPrivacy.applyNoise(this.network.weights_ih, this.privacyEpsilon);
-    DifferentialPrivacy.applyNoise(this.network.weights_ho, this.privacyEpsilon);
-    DifferentialPrivacy.applyNoise(this.network.bias_h, this.privacyEpsilon);
-    DifferentialPrivacy.applyNoise(this.network.bias_o, this.privacyEpsilon);
+    // The Wasm engine natively applies Differential Privacy and returns Float64Arrays
+    const encryptedPayload: any = this.network.serialize();
+
+    // Helper to convert Wasm 1D flat array to TS 2D array
+    const to2D = (flat: number[], rows: number, cols: number) => {
+      const arr2d: number[][] = [];
+      for (let i = 0; i < rows; i++) {
+        arr2d.push(flat.slice(i * cols, (i + 1) * cols));
+      }
+      return { rows, cols, data: arr2d } as any; // Cast as any to bypass strict Matrix type check
+    };
 
     // 3. Quantize matrices to 8-bit integers to save bandwidth
     return {
-      weights_ih: Quantizer.quantize(this.network.weights_ih),
-      weights_ho: Quantizer.quantize(this.network.weights_ho),
-      bias_h: Quantizer.quantize(this.network.bias_h),
-      bias_o: Quantizer.quantize(this.network.bias_o)
+      weights_ih: Quantizer.quantize(to2D(Array.from(encryptedPayload.weights_ih), this.hiddenNodes, this.inputNodes)),
+      weights_ho: Quantizer.quantize(to2D(Array.from(encryptedPayload.weights_ho), this.outputNodes, this.hiddenNodes)),
+      bias_h: Quantizer.quantize(to2D(Array.from(encryptedPayload.bias_h), this.hiddenNodes, 1)),
+      bias_o: Quantizer.quantize(to2D(Array.from(encryptedPayload.bias_o), this.outputNodes, 1))
     };
   }
 }

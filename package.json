@@ -1,18 +1,27 @@
 {
-  "name": "scatterjs",
-  "version": "1.0.0",
-  "description": "",
+  "name": "flockml",
+  "version": "1.1.0",
+  "description": "Enterprise Grade Decentralized AI Node Engine (Wasm Powered)",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build:wasm": "cd flockml-wasm && wasm-pack build --target web",
+    "build": "npm run build:wasm && tsc",
+    "prepublishOnly": "npm run build",
+    "enterprise:live": "ts-node src/enterprise/live-demo-server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   },
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "flockml-wasm": "file:./flockml-wasm/pkg",
+    "ws": "^8.21.0"
+  }
 }

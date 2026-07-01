@@ -1,0 +1,10 @@
+/Users/supratim/Desktop/flockML/flockml-wasm/target/wasm32-unknown-unknown/release/deps/js_sys-f150fd34d6899e4d.d: /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/lib.rs /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/mod.rs /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/queue.rs /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/task/singlethread.rs
+
+/Users/supratim/Desktop/flockML/flockml-wasm/target/wasm32-unknown-unknown/release/deps/libjs_sys-f150fd34d6899e4d.rlib: /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/lib.rs /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/mod.rs /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/queue.rs /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/task/singlethread.rs
+
+/Users/supratim/Desktop/flockML/flockml-wasm/target/wasm32-unknown-unknown/release/deps/libjs_sys-f150fd34d6899e4d.rmeta: /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/lib.rs /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/mod.rs /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/queue.rs /Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/task/singlethread.rs
+
+/Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/lib.rs:
+/Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/mod.rs:
+/Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/queue.rs:
+/Users/supratim/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.103/src/futures/task/singlethread.rs:

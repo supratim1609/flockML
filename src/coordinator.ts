@@ -1,4 +1,3 @@
-import { NeuralNetwork } from './network';
 import { Matrix } from './matrix';
 import { Quantizer, QuantizedPayload } from './quantization';
 
@@ -10,7 +9,12 @@ import { Quantizer, QuantizedPayload } from './quantization';
  * decrypts them, and mathematically averages them together to update the Global Model.
  */
 export class Coordinator {
-  globalModel: NeuralNetwork;
+  globalModel: {
+    weights_ih: Matrix;
+    weights_ho: Matrix;
+    bias_h: Matrix;
+    bias_o: Matrix;
+  };
   clientUpdates: {
     weights_ih: Matrix;
     weights_ho: Matrix;
@@ -19,7 +23,18 @@ export class Coordinator {
   }[];
 
   constructor(inputNodes: number, hiddenNodes: number, outputNodes: number) {
-    this.globalModel = new NeuralNetwork(inputNodes, hiddenNodes, outputNodes);
+    this.globalModel = {
+      weights_ih: new Matrix(hiddenNodes, inputNodes),
+      weights_ho: new Matrix(outputNodes, hiddenNodes),
+      bias_h: new Matrix(hiddenNodes, 1),
+      bias_o: new Matrix(outputNodes, 1)
+    };
+    
+    this.globalModel.weights_ih.randomize();
+    this.globalModel.weights_ho.randomize();
+    this.globalModel.bias_h.randomize();
+    this.globalModel.bias_o.randomize();
+
     this.clientUpdates = [];
   }
 
