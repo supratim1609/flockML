@@ -1,0 +1,66 @@
+Category,Name / Agency Name,Executive Role / Division,Organization / Country,Decision & Funding Velocity,Verified Contact / Email / Application Portal,Website / Handle,Strategic Alignment & Outreach Pitch Hook
+Fast Angel,Elad Gil,Solo Capitalist,USA,24-48h Check,elad@eladgil.com,eladgil.com,Fast solo check for AI infrastructure & Wasm.
+Fast Angel,Nat Friedman,AI Grant / Ex-GitHub CEO,USA,Fast Solo Signoff,nat@aigrant.org,aigrant.org,"Backs open-source AI, browser execution, Wasm."
+Fast Angel,Daniel Gross,AI Grant,USA,Fast Solo Signoff,daniel@aigrant.org,aigrant.org,Co-leads AI Grant; fast-track $250k checks for ML tools.
+Fast Angel,Naval Ravikant,Solo Angel / AngelList,USA,Direct Angel Check,naval@angellist.com,twitter.com/naval,Sovereign compute & decentralized protocols.
+Fast Angel,Sarah Guo,Conviction VC,USA,Agile AI Seed,sarah@conviction.vc,conviction.vc,AI-native seed fund targeting ML primitives.
+Fast Angel,Amjad Masad,Replit Founder / Angel,USA,24h Technical Signoff,amjad@replit.com,replit.com,Browser-native execution & developer tooling pioneer.
+Fast Angel,Dylan Field,Figma CEO / Angel,USA,Fast Founder Check,dylan@figma.com,figma.com,Pioneer in scaling WebAssembly in browser engines.
+Fast Angel,Solomon Hykes,Docker / Dagger Founder,USA,Direct Systems Angel,solomon@dagger.io,dagger.io,Containerization & Wasm sandboxing pioneer.
+Fast Angel,Patrick Collison,Stripe CEO / Angel,USA,Direct Angel Check,patrick@stripe.com,stripe.com,"Developer tools, web runtimes, and systems engineering."
+Fast Angel,John Collison,Stripe President / Angel,USA,Direct Angel Check,john@stripe.com,stripe.com,Low-level software infrastructure & web primitives.
+Fast Angel,Swyx (Shawn Wang),Latent Space / Angel,USA,24h Technical Check,swyx@swyx.io,swyx.io,Leading AI engineer & open-weight model champion.
+Fast Angel,Andrej Karpathy,AI Pioneer / Angel,USA,Direct Angel Check,andrej@karpathy.ai,karpathy.ai,"On-device ML inference, Int8 quantization, C++ execution."
+Fast Angel,Chris Lattner,Modular / LLVM Creator,USA,Systems Angel,clattner@modular.com,modular.com,Compiler infrastructure & high-performance ML execution.
+Fast Angel,Lachy Groom,Solo Capitalist,USA,24-48h Solo Check,lachy@lachygroom.com,lachygroom.com,High-velocity solo check writer for tech founders.
+Fast Angel,Clement Delangue,Hugging Face CEO,USA/France,Fast Angel Check,clement@huggingface.co,huggingface.co,Open-source AI models & edge runtime execution.
+Fast Angel,Garry Tan,Y Combinator President,USA,Fast Seed/Angel,garry@ycombinator.com,garrytan.com,Early-stage developer infrastructure & open source.
+Fast Angel,Jason Calacanis,LAUNCH / Angel,USA,Fast Syndicate Check,jason@calacanis.com,calacanis.com,Early-stage developer tools & open platforms.
+Fast Angel,Balaji Srinivasan,Sovereign Tech Angel,USA/Global,Direct Angel Check,balaji@balajis.com,balajis.com,Decentralized compute grids & sovereign data.
+Fast Angel,Emad Mostaque,Decentralized AI Angel,UK/Global,Fast Check,emad@stability.ai,twitter.com/emadmostaque,Crowdsourced AI training & open-weight models.
+Fast Angel,Drew Houston,Dropbox CEO / Angel,USA,Fast Founder Check,drew@dropbox.com,dropbox.com,"Distributed storage, sync protocols & edge execution."
+Fast Angel,Mike Krieger,Anthropic / Ex-Instagram,USA,Systems Angel,mike@anthropic.com,anthropic.com,High-scale systems engineering & AI platforms.
+Fast Angel,Qasar Younis,Applied Intuition CEO,USA,Fast Founder Check,qasar@applied.co,appliedintuition.com,Autonomous systems & edge computing.
+Fast Angel,Armon Dadgar,HashiCorp CTO / Angel,USA,Direct Systems Angel,armon@hashicorp.com,hashicorp.com,Zero-trust distributed infrastructure & Wasm.
+Fast Angel,Simon Willison,Datasette / Wasm Angel,UK,Fast Tech Check,simon@simonwillison.net,simonwillison.net,Browser-native Wasm execution & local ML tools.
+Fast Angel,George Hotz,comma.ai / Tinygrad,USA,Direct Hacker Check,geohot@comma.ai,tinygrad.org,Ultra-lightweight ML training frameworks & C/Wasm.
+Fast Angel,Guillermo Rauch,Vercel CEO / Angel,USA,Fast Founder Check,rauchg@vercel.com,vercel.com,"Serverless execution, edge networks & WebAssembly."
+Fast Angel,Mitchell Hashimoto,HashiCorp / Ghostty,USA,Systems Angel,mitchell@mitchellh.com,mitchellh.com,High-performance Wasm systems & CLI engines.
+Fast Angel,Paul Graham,YC Co-Founder / Angel,UK/USA,Direct Angel Check,pg@paulgraham.com,paulgraham.com,Fundamental software infrastructure & contrarian tech.
+Fast Angel,Sam Altman,OpenAI CEO / Angel,USA,Fast Angel Check,sam@open.ai,samaltman.com,Novel compute substrates & distributed AI infrastructure.
+Fast Angel,Alexandr Wang,Scale AI CEO / Angel,USA,Fast Founder Check,alex@scale.com,scale.com,AI training pipelines & data sovereignty tools.
+Fast Angel,Aravind Srinivas,Perplexity CEO / Angel,USA,Fast Founder Check,aravind@perplexity.ai,perplexity.ai,"Distributed search, inference optimization & Wasm."
+Fast Angel,Kunal Shah,CRED Founder / Angel,India,24-48h Check,kunal@cred.club,twitter.com/kunalb11,Prolific fast angel check writer in India.
+Fast Angel,Bhavish Aggarwal,Krutrim AI / Ola,India,Fast Founder Check,bhavish@olacabs.com,krutrim.ai,Sovereign Indian AI compute & edge execution.
+Fast Angel,Sridhar Vembu,Zoho CEO / Founder,India,Sovereign Angel,sridhar@zoho.com,zoho.com,Decentralized software stacks & cloud independence.
+Fast Angel,Vijay Shekhar Sharma,Paytm CEO / Angel,India,Fast Founder Check,vijay@paytm.com,paytm.com,Edge computing & Indian privacy compliance.
+Fast Angel,Girish Mathrubootham,Freshworks CEO / Angel,India/USA,Fast Founder Check,girish@freshworks.com,freshworks.com,SaaS infrastructure & cross-border software.
+Fast Angel,Nitin Kamath,Zerodha / Rainmatter,India,Agile Seed Check,nitin@zerodha.com,rainmatter.com,"Open-source tech, privacy & bootstrap-friendly tools."
+Fast Angel,Nikhil Kamath,Zerodha / Rainmatter,India,Agile Seed Check,nikhil@zerodha.com,rainmatter.com,Capital-efficient tech & deep-tech infrastructure.
+Fast Angel,Deepinder Goyal,Zomato CEO / Angel,India,Fast Founder Check,deepinder@zomato.com,zomato.com,Scalable tech platforms & edge orchestration.
+Fast Angel,Harshil Mathur,Razorpay CEO / Angel,India,Fast Founder Check,harshil@razorpay.com,razorpay.com,Developer APIs & cross-border financial tech.
+Fast Angel,Shashank Kumar,Razorpay CTO / Angel,India,Systems Tech Check,shashank@razorpay.com,razorpay.com,Low-level developer tools & API execution.
+Fast Angel,Amod Malviya,Udaan CTO / Angel,India,Technical Angel,amod@udaan.com,udaan.com,Distributed systems engineering & edge networks.
+Fast Angel,Anupam Mittal,People Group / Angel,India,Fast Angel Check,anupam@people-group.com,twitter.com/anupammittal,Early-stage software & AI infrastructure.
+Fast Angel,Kunal Bahl,Titan Capital Founder,India,48h Term Sheet,kunal@titancapital.vc,titancapital.vc,Fast seed/angel checks for technical founders.
+Fast Angel,Rohit Bansal,Titan Capital Founder,India,48h Term Sheet,rohit@titancapital.vc,titancapital.vc,High-velocity seed check writer in India.
+Fast Angel,Ritesh Agarwal,OYO CEO / Angel,India,Fast Founder Check,ritesh@oyorooms.com,oyorooms.com,Global scaling & tech-enabled infrastructure.
+Fast Angel,Binny Bansal,Three State Ventures,India,Direct Angel Check,binny@threestate.vc,threestate.vc,Cross-border tech & early-stage deep tech.
+Fast Angel,Sachin Bansal,Navi CEO / Angel,India,Direct Angel Check,sachin@navi.com,navi.com,High-volume compute & data infrastructure.
+Fast Angel,Sanjeev Bikhchandani,Info Edge Founder,India,Veteran Seed Check,sanjeev@infoedge.in,infoedge.in,Deep-tech & enterprise software in India.
+Fast Angel,Ashish Hemrajani,BookMyShow CEO,India,Fast Founder Check,ashish@bookmyshow.com,bookmyshow.com,Distributed ticketing & web execution engines.
+International Gov Fund,Dubai Future District Fund & DGE,Sovereign Innovation Agency,UAE,Fast-Track Grant (30 Days),info@dfdf.ae,dfdf.ae,Soft-landing grants ($100k-$1M) & AI Sandbox.
+International Gov Fund,SGInnovate & Enterprise Singapore,Deep Tech Agency,Singapore,Co-Investment (30-45 Days),enquiry@sginnovate.com,sginnovate.com,Sovereign AI co-funding & SEA market gateway.
+International Gov Fund,SPRIND (Federal Disruptive Agency),Sovereign Innovation,Germany / EU,Fast Challenge Grant,sprind@sprind.org,sprind.org,Disruptive deep-tech challenge grants (€100k-€1M).
+International Gov Fund,Innovate UK / AI Safety Institute,National Tech Agency,United Kingdom,Non-Dilutive Grant,support@innovateuk.ukri.org,innovateuk.ukri.org,Sovereign AI compute & privacy grants (£50k-£500k).
+International Gov Fund,Startup Estonia / SmartCap,EU Tech Innovation,Estonia / EU,e-Residency Grant (30 Days),info@startupestonia.ee,startupestonia.ee,EU fast-track deep-tech grants (€50k-€250k).
+International Gov Fund,US NSF SBIR / STTR Program,Federal Science Fund,USA,Non-Dilutive Grant,sbir@nsf.gov,seedfund.nsf.gov,Seed research grants ($275k-$1.25M) for Wasm/ML infrastructure.
+International Gov Fund,NTDP & CODE Initiative,Sovereign Tech Fund,Saudi Arabia,Fast Relocation Grant,info@ntdp.gov.sa,ntdp.gov.sa,Fast-track AI grants ($100k-$500k) & sovereign compute.
+International Gov Fund,Scale AI & NRC IRAP,Innovation Supercluster,Canada,Non-Dilutive Co-Funding,info@scaleai.ca,scaleai.ca,AI infrastructure & cross-border expansion grants (CAD $100k-$500k).
+International Gov Fund,Bpifrance Deeptech Fund,Sovereign Innovation,France / EU,Fast-Track Grant,deeptech@bpifrance.fr,bpifrance.fr,Non-dilutive deep-tech grants & loans (€100k-€500k).
+International Gov Fund,METI & J-Startup AI Program,Ministry of Economy,Japan,Sovereign AI Subsidy,j-startup@meti.go.jp,j-startup.go.jp,Sovereign AI & edge compute subsidies (¥10M-¥50M).
+International Gov Fund,Enterprise Ireland HPSU,Sovereign Tech Agency,Ireland / EU,EU Co-Funding,hpsu@enterprise-ireland.com,enterprise-ireland.com,EU gateway equity/grant co-funding (€50k-€200k).
+International Gov Fund,Innosuisse (Swiss Innovation),Federal Innovation,Switzerland,Fast-Track R&D Grant,info@innosuisse.ch,innosuisse.ch,Swiss AI initiative R&D subsidies (CHF 100k-500k).
+International Gov Fund,Vinnova Innovation Agency,National Tech Agency,Sweden / EU,Non-Dilutive Grant,vinnova@vinnova.se,vinnova.se,Green compute & edge AI innovation grants (SEK 500k-3M).
+International Gov Fund,European Innovation Council (EIC),EU Sovereign Fund,European Union,Blended Grant (60 Days),eic@ec.europa.eu,eic.ec.europa.eu,Non-dilutive grant (€0.5M-€2.5M) for deep tech.
+International Gov Fund,Israel Innovation Authority (IIA),Sovereign R&D Agency,Israel,Joint R&D Grant,contact@innovationisrael.org.il,innovationisrael.org.il,Cross-border deep-tech co-funding ($100k-$500k).

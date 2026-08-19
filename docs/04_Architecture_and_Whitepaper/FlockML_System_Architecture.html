@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlockML - Sovereign Architecture Masterclass</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+    
+    body {
+      background-color: #050505;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      max-width: 900px;
+    }
+    
+    .header h1 {
+      font-size: 34px;
+      margin: 0 0 10px 0;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #FFFFFF, #999999);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .header p {
+      color: #FBBF24;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Tabs Navigation */
+    .tabs {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #222;
+      padding-bottom: 15px;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: center;
+    }
+
+    .tab-btn {
+      background: #0A0A0A;
+      border: 1px solid #333;
+      color: #888;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .tab-btn:hover {
+      border-color: #666;
+      color: #ddd;
+    }
+
+    .tab-btn.active {
+      background: #111;
+      border-color: #34D399;
+      color: #34D399;
+      box-shadow: 0 0 15px rgba(52, 211, 153, 0.1);
+    }
+    
+    .tab-btn[data-target="tab-math"].active {
+      border-color: #F87171;
+      color: #F87171;
+      box-shadow: 0 0 15px rgba(248, 113, 113, 0.1);
+    }
+
+    /* Content Area */
+    .tab-content {
+      display: none;
+      width: 100%;
+      max-width: 1200px;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .mermaid-container {
+      background: #080808;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .tech-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .spec-card {
+      background: #0A0A0A;
+      border: 1px solid #1A1A1A;
+      border-left: 3px solid #34D399;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .spec-card h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #aaa;
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+    }
+
+    .spec-card p {
+      font-size: 14px;
+      color: #ddd;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Mathematics Section Styling */
+    .math-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .math-box {
+      background: #080808;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .math-box h2 {
+      font-size: 20px;
+      color: #F87171;
+      margin-top: 0;
+      border-bottom: 1px solid #222;
+      padding-bottom: 10px;
+    }
+
+    .formula {
+      background: #030303;
+      border: 1px solid #111;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      color: #FBBF24;
+      text-align: center;
+      margin: 20px 0;
+      letter-spacing: 1px;
+    }
+
+    .math-text {
+      font-size: 15px;
+      color: #bbb;
+      line-height: 1.6;
+    }
+    
+    .math-text strong {
+      color: #fff;
+    }
+    
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+    }
+    
+    .data-table th, .data-table td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #222;
+    }
+    
+    .data-table th {
+      color: #F87171;
+    }
+    
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>FLOCKML CORE ARCHITECTURE</h1>
+    <p>Interactive Systems Blueprint & Quantization Mathematics</p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-target="tab-global">Global WebGPU Mesh</button>
+    <button class="tab-btn" data-target="tab-enterprise">Enterprise (Govt/TCS)</button>
+    <button class="tab-btn" data-target="tab-orbital">Orbital (ISRO Space)</button>
+    <button class="tab-btn" data-target="tab-math" style="margin-left: 20px;">[ The Pure Mathematics ]</button>
+  </div>
+
+  <!-- TAB 1: GLOBAL MESH -->
+  <div id="tab-global" class="tab-content active">
+    <div class="tech-specs">
+      <div class="spec-card">
+        <h3>Network Topology</h3>
+        <p>Decentralized WebRTC peer-to-peer ring. Bypasses central AWS routing.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Compute Layer</h3>
+        <p>Wasm (WebAssembly) executing wgsl shaders directly via browser WebGPU API.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Security</h3>
+        <p>Ed25519 Byzantine Fault Tolerant Sybil filter blocks poisoned gradients.</p>
+      </div>
+    </div>
+    
+    <div class="mermaid-container">
+      <div class="mermaid">
+        %%{init: {"theme": "base", "themeVariables": { "primaryColor": "#0a0a0a", "primaryTextColor": "#fff", "primaryBorderColor": "#34D399", "lineColor": "#444", "secondaryColor": "#111", "tertiaryColor": "#040404", "fontFamily": "Space Grotesk", "clusterBkg": "#080808", "clusterBorder": "#222"}}}%%
+        graph TD
+            subgraph ClientLayer ["1. EXTERNAL INTERFACE"]
+                Client["SaaS Developer / Enterprise API"]
+            end
+            
+            subgraph CoordinatorLayer ["2. FLOCKBOX EDGE LAYER"]
+                Coordinator["FlockBox Coordinator Engine"]
+                Validator["Ed25519 BFT Sybil Filter"]
+                Coordinator -->|Shards Prompt| Validator
+            end
+            
+            subgraph ComputeMesh ["3. GLOBAL WEBGPU MESH"]
+                Node1["Website Visitor Laptop WebGPU"]
+                Node2["Mobile Browser Smartphone"]
+                Node3["Embedded Web View App"]
+            end
+            
+            subgraph AggregationLayer ["4. TENSOR ASSEMBLY"]
+                Aggregator["Tensor Aggregation Layer"]
+            end
+            
+            Client -->|API Request| Coordinator
+            Validator -->|Distributes Tensors| Node1
+            Validator -->|Distributes Tensors| Node2
+            Validator -->|Distributes Tensors| Node3
+            
+            Node1 -->|1-bit Matrix Math| Aggregator
+            Node2 -->|1-bit Matrix Math| Aggregator
+            Node3 -->|1-bit Matrix Math| Aggregator
+            
+            Aggregator -->|Returns Inference Stream| Client
+            
+            classDef default fill:#111,stroke:#34D399,stroke-width:2px,color:#fff;
+            classDef node fill:#050505,stroke:#22D3EE,stroke-width:2px,color:#fff,rx:8px,ry:8px;
+            classDef cluster fill:#020202,stroke:#222,stroke-width:1px,color:#888,rx:12px,ry:12px;
+            class Client,Node1,Node2,Node3 node;
+            class Coordinator,Validator,Aggregator default;
+            class ClientLayer,CoordinatorLayer,ComputeMesh,AggregationLayer cluster;
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: ENTERPRISE -->
+  <div id="tab-enterprise" class="tab-content">
+    <div class="tech-specs">
+      <div class="spec-card" style="border-left-color: #FBBF24;">
+        <h3>Privacy Standard</h3>
+        <p>100% DPDP Act 2023 Compliant. Data never leaves the intranet.</p>
+      </div>
+      <div class="spec-card" style="border-left-color: #FBBF24;">
+        <h3>Hardware Edge</h3>
+        <p>FlockBox 1U Shelves deployed directly inside TCS / Government datacenters.</p>
+      </div>
+      <div class="spec-card" style="border-left-color: #FBBF24;">
+        <h3>Consumer Grid</h3>
+        <p>Millions of Jio smartphones running <code>flock.js</code> yielding massive compute scale.</p>
+      </div>
+    </div>
+
+    <div class="mermaid-container">
+      <div class="mermaid">
+        %%{init: {"theme": "base", "themeVariables": { "primaryColor": "#0a0a0a", "primaryTextColor": "#fff", "primaryBorderColor": "#FBBF24", "lineColor": "#444", "secondaryColor": "#111", "tertiaryColor": "#040404", "fontFamily": "Space Grotesk", "clusterBkg": "#080808", "clusterBorder": "#222"}}}%%
+        graph TD
+            subgraph ClientLayer ["1. ENTERPRISE INTRANET"]
+                Client["Govt Department / TCS Client"]
+            end
+            
+            subgraph CoordinatorLayer ["2. PRIVATE DATACENTER"]
+                Coordinator["FlockBox 1U Shelf Private Rack"]
+                Validator["Zero-Trust BFT Validator"]
+                Coordinator -->|Shards Prompt Securely| Validator
+            end
+            
+            subgraph ComputeMesh ["3. NATIONAL INTRANET / CONSUMER GRID"]
+                Node1["TCS Developer Laptops 10Gbps LAN"]
+                Node2["Jio 5G Consumer Smartphones"]
+                Node3["Jio Fiber Set-Top Boxes Home WiFi"]
+            end
+            
+            subgraph AggregationLayer ["4. SECURE ASSEMBLY"]
+                Aggregator["Air-Gapped Tensor Aggregator"]
+            end
+            
+            Client -->|Private API Request| Coordinator
+            Validator -->|DPDP Compliant Tensors| Node1
+            Validator -->|DPDP Compliant Tensors| Node2
+            Validator -->|DPDP Compliant Tensors| Node3
+            
+            Node1 -->|1-bit Matrix Math| Aggregator
+            Node2 -->|1-bit Matrix Math| Aggregator
+            Node3 -->|1-bit Matrix Math| Aggregator
+            
+            Aggregator -->|100% Secure Inference| Client
+            
+            classDef default fill:#111,stroke:#FBBF24,stroke-width:2px,color:#fff;
+            classDef node fill:#050505,stroke:#34D399,stroke-width:2px,color:#fff,rx:8px,ry:8px;
+            classDef cluster fill:#020202,stroke:#222,stroke-width:1px,color:#888,rx:12px,ry:12px;
+            class Client,Node1,Node2,Node3 node;
+            class Coordinator,Validator,Aggregator default;
+            class ClientLayer,CoordinatorLayer,ComputeMesh,AggregationLayer cluster;
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: ORBITAL -->
+  <div id="tab-orbital" class="tab-content">
+    <div class="tech-specs">
+      <div class="spec-card" style="border-left-color: #60A5FA;">
+        <h3>Strategic Goal</h3>
+        <p>Local LEO satellite compute. Do not beam raw images down to Earth.</p>
+      </div>
+      <div class="spec-card" style="border-left-color: #60A5FA;">
+        <h3>Bandwidth Savings</h3>
+        <p>Process terabytes of vision data in space. Beam down 2KB text insights.</p>
+      </div>
+      <div class="spec-card" style="border-left-color: #60A5FA;">
+        <h3>Defense Tech</h3>
+        <p>Real-time anomaly detection for ISRO without relying on ground servers.</p>
+      </div>
+    </div>
+
+    <div class="mermaid-container">
+      <div class="mermaid">
+        %%{init: {"theme": "base", "themeVariables": { "primaryColor": "#0a0a0a", "primaryTextColor": "#fff", "primaryBorderColor": "#60A5FA", "lineColor": "#444", "secondaryColor": "#111", "tertiaryColor": "#040404", "fontFamily": "Space Grotesk", "clusterBkg": "#080808", "clusterBorder": "#222"}}}%%
+        graph TD
+            subgraph ClientLayer ["1. EARTH STATION"]
+                Client["ISRO Command Center"]
+            end
+            
+            subgraph CoordinatorLayer ["2. ORBITAL COORDINATOR"]
+                Coordinator["FlockBox Space Component"]
+                Validator["Orbital BFT Node"]
+                Coordinator -->|Uplinks Task| Validator
+            end
+            
+            subgraph ComputeMesh ["3. LEO SATELLITE CONSTELLATION"]
+                Node1["LEO Satellite 1 Vision Wasm"]
+                Node2["LEO Satellite 2 Vision Wasm"]
+                Node3["LEO Satellite 3 Vision Wasm"]
+            end
+            
+            subgraph AggregationLayer ["4. SPACE ASSEMBLY"]
+                Aggregator["Orbital Tensor Aggregator"]
+            end
+            
+            Client -->|Uplink Intelligence Request| Coordinator
+            Validator -->|Distributes Tensors| Node1
+            Validator -->|Distributes Tensors| Node2
+            Validator -->|Distributes Tensors| Node3
+            
+            Node1 -->|Processes Raw Images in Space| Aggregator
+            Node2 -->|Processes Raw Images in Space| Aggregator
+            Node3 -->|Processes Raw Images in Space| Aggregator
+            
+            Aggregator -->|Beams Down 2KB Text Insight| Client
+            
+            classDef default fill:#111,stroke:#60A5FA,stroke-width:2px,color:#fff;
+            classDef node fill:#050505,stroke:#FBBF24,stroke-width:2px,color:#fff,rx:8px,ry:8px;
+            classDef cluster fill:#020202,stroke:#222,stroke-width:1px,color:#888,rx:12px,ry:12px;
+            class Client,Node1,Node2,Node3 node;
+            class Coordinator,Validator,Aggregator default;
+            class ClientLayer,CoordinatorLayer,ComputeMesh,AggregationLayer cluster;
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: MATHEMATICS -->
+  <div id="tab-math" class="tab-content">
+    
+    <div class="math-grid">
+      <!-- Quantization Math -->
+      <div class="math-box">
+        <h2>1. BitNet 1.58b Quantization</h2>
+        <p class="math-text">
+          Standard LLMs require FP16 (16-bit floating point) weights. A 70 Billion parameter model requires <strong>~140 GB of VRAM</strong>, making it impossible to run on consumer hardware. 
+          <br><br>
+          FlockML utilizes ternary weight quantization, clamping all parameter weights strictly to <strong>[-1, 0, 1]</strong>.
+        </p>
+        
+        <div class="formula">
+          W' = Round(Clip(W / &gamma;, -1, 1))<br>
+          &gamma; = Mean(|W|)
+        </div>
+
+        <p class="math-text">
+          By utilizing only three states, the model operates at exactly <strong>1.58 bits per parameter</strong> (since log2(3) ≈ 1.58). This results in an <strong>80.2% reduction</strong> in VRAM footprint with near-zero degradation in perplexity.
+        </p>
+      </div>
+
+      <!-- Sharding Math -->
+      <div class="math-box">
+        <h2>2. Memory Sharding Physics</h2>
+        <p class="math-text">
+          Even quantized, a 70B model requires ~13.8 GB of VRAM. Standard browsers crash when allocating more than 4GB. FlockML solves this by mathematically sharding the layers across the WebRTC sybil ring.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Target Model</th>
+              <th>Required VRAM</th>
+              <th>Nodes in Mesh</th>
+              <th>VRAM Per Node</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Llama 3 8B (Quantized)</td>
+              <td>~1.6 GB</td>
+              <td>10 Nodes</td>
+              <td><strong>~160 MB</strong></td>
+            </tr>
+            <tr>
+              <td>Llama 3 70B (Quantized)</td>
+              <td>~13.8 GB</td>
+              <td>50 Nodes</td>
+              <td><strong>~276 MB</strong></td>
+            </tr>
+            <tr>
+              <td>Llama 3 405B (Quantized)</td>
+              <td>~80.0 GB</td>
+              <td>500 Nodes</td>
+              <td><strong>~160 MB</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="math-text" style="margin-top:20px;">
+          <strong>Zero-Copy DMA:</strong> By using WebAssembly (Wasm) `SharedArrayBuffer`, FlockML maps the sharded 276MB weights directly into the browser's WebGPU pipeline without copying it into JavaScript memory, eliminating garbage-collection latency entirely.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    mermaid.initialize({ startOnLoad: false });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Render initially active tab
+      mermaid.init(undefined, document.querySelectorAll('.tab-content.active .mermaid'));
+    });
+
+    // Tab Switching Logic
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        // Add active class to clicked
+        btn.classList.add('active');
+        const targetId = btn.getAttribute('data-target');
+        const targetTab = document.getElementById(targetId);
+        targetTab.classList.add('active');
+        
+        // Render mermaid diagrams only when tab becomes visible
+        const unrendered = targetTab.querySelectorAll('.mermaid:not([data-processed="true"])');
+        if(unrendered.length > 0) {
+          mermaid.init(undefined, unrendered);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

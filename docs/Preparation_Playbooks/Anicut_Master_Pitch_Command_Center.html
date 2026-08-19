@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlockML | Pitch Command Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0c10;
+            --surface: #12151c;
+            --surface-elevated: #1a1e28;
+            --border: #242936;
+            --border-hover: #3b4255;
+            --text-main: #f0f4fc;
+            --text-sub: #9aa5b9;
+            --text-dim: #606b80;
+            --green: #10b981;
+            --green-glow: rgba(16, 185, 129, 0.12);
+            --blue: #3b82f6;
+            --blue-glow: rgba(59, 130, 246, 0.12);
+            --red: #ef4444;
+            --amber: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            padding: 32px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 28px;
+        }
+
+        .brand-title {
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--green-glow);
+            color: var(--green);
+            border: 1px solid var(--green);
+            font-weight: 700;
+        }
+
+        .top-stats {
+            display: flex;
+            gap: 24px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .top-stats strong {
+            color: var(--text-main);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-sub);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--surface);
+            color: var(--text-main);
+        }
+
+        .tab-btn.active {
+            background: var(--surface-elevated);
+            color: var(--text-main);
+            border-color: var(--border-hover);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .tag-green { background: var(--green-glow); color: var(--green); border: 1px solid var(--green); }
+        .tag-blue { background: var(--blue-glow); color: var(--blue); border: 1px solid var(--blue); }
+        .tag-red { background: rgba(239, 68, 68, 0.12); color: var(--red); border: 1px solid var(--red); }
+
+        .lead-box {
+            background: var(--surface-elevated);
+            border-left: 3px solid var(--green);
+            padding: 14px 16px;
+            border-radius: 0 6px 6px 0;
+            margin: 14px 0;
+            font-size: 14px;
+        }
+
+        .lead-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+
+        .step-item {
+            margin-bottom: 16px;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 2px;
+        }
+
+        .step-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .row-label {
+            color: var(--text-sub);
+        }
+
+        .row-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .qa-box {
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 14px 16px;
+        }
+
+        .qa-q {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .qa-a {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        ul.clean-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.clean-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        ul.clean-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-title">
+            <span>FlockML Command Center</span>
+            <span class="badge">ANICUT LEAD PITCH</span>
+        </div>
+        <div class="top-stats">
+            <div>ASK: <strong>$20M - $30M</strong></div>
+            <div>POST: <strong>$120M</strong></div>
+            <div>EQUITY: <strong>20% - 25%</strong></div>
+        </div>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="setTab('pitch')">1. The 15-Minute Pitch</button>
+        <button class="tab-btn" onclick="setTab('moats')">2. The 5 Moats</button>
+        <button class="tab-btn" onclick="setTab('gtm')">3. GTM & Business Model</button>
+        <button class="tab-btn" onclick="setTab('qa')">4. Q&A Rebuttals</button>
+        <button class="tab-btn" onclick="setTab('rules')">5. Psychological Rules</button>
+    </div>
+
+    <!-- TAB 1: PITCH -->
+    <div id="pitch" class="tab-pane active">
+        <div class="grid-2">
+            <div>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Part 1: Thesis & Problem (0 - 4 Min)</span>
+                        <span class="tag tag-blue">SLIDES 01 - 05</span>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">01. THE META PARADOX (SLIDE 03)</div>
+                        <div class="step-title">The world has an execution bottleneck, not a model shortage</div>
+                        <div class="step-desc">Meta and open-source teams are releasing frontier models for free that fit in 20GB. But 99% of enterprise laptops only have 8GB or 16GB RAM. They cannot run them without crashing.</div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">02. THE CORE POSITIONING (SLIDE 04)</div>
+                        <div class="step-title">Software Execution Layer, NOT a GPU marketplace</div>
+                        <div class="step-desc">FlockML abstracts heterogeneous consumer laptops into a single virtual supercomputer via WebGPU and WebAssembly.</div>
+                    </div>
+
+                    <div class="lead-box">
+                        <div class="lead-label">KEY TAKEAWAY LINE:</div>
+                        "FlockML does not need to own or build the world's datacenters. We become the software layer through which the world's available compute is executed."
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Part 2: The Math & Economics (4 - 9 Min)</span>
+                        <span class="tag tag-green">SLIDES 06 - 11</span>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">03. 1.58-BIT BITNET WGSL (SLIDE 07)</div>
+                        <div class="step-title">Zero Multiplications on Client GPUs</div>
+                        <div class="step-desc">We replace floating-point multipliers with pure integer additions and subtractions, saving 80.2% VRAM and eliminating $500k datacenter CapEx.</div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">04. UNIT ECONOMICS ARBITRAGE (SLIDE 09)</div>
+                        <div class="step-title">$32/hr Legacy Clouds vs $10/hr FlockML</div>
+                        <div class="step-desc">We deliver the same 8x H100 throughput at 1/3rd the cost while capturing an 80%+ gross margin. Providers are paid strictly on active utilization; zero idle burn.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Part 3: Sovereign Traction & The Ask (9 - 14 Min)</span>
+                        <span class="tag tag-blue">SLIDES 12 - 17</span>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">05. MEITY PILOT (SLIDE 14)</div>
+                        <div class="step-title">50-Node Sovereign Government Grid</div>
+                        <div class="step-desc">Formal submission across NIC Delhi HQ and Webel Kolkata under DPDP Act 2023 compliance. Government data never leaves client memory.</div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">06. FINANCIAL PROJECTIONS (SLIDE 15)</div>
+                        <div class="step-title">₹82 Cr ($10M) ARR by Month 24</div>
+                        <div class="step-desc">Blended 82% gross margins across B2B sovereign annual licenses and D2C developer API streams.</div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">07. THE LEAD SEED ASK (SLIDE 16)</div>
+                        <div class="step-title">Raising $20M - $30M Seed</div>
+                        <div class="step-desc">Allocated to compiler engineering hires, scaling 50 government nodes, and developer SDK distribution.</div>
+                    </div>
+
+                    <div class="lead-box">
+                        <div class="lead-label">CLOSING LINE:</div>
+                        "We are building the sovereign compute backbone of India and taking it global. We want Anicut Capital to lead this round."
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Key Numbers at a Glance</span>
+                        <span class="tag tag-green">CHEATSHEET</span>
+                    </div>
+                    <div class="row"><span class="row-label">Target Round Size</span><span class="row-val">$20M - $30M Seed</span></div>
+                    <div class="row"><span class="row-label">Valuation</span><span class="row-val">$90M Pre / $120M Post</span></div>
+                    <div class="row"><span class="row-label">VRAM Compression</span><span class="row-val">80.2% Savings</span></div>
+                    <div class="row"><span class="row-label">Gross Margins</span><span class="row-val">82% Blended</span></div>
+                    <div class="row"><span class="row-label">Active Pilot</span><span class="row-val">50 Nodes (MeitY Delhi/Kolkata)</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 2: THE 5 MOATS -->
+    <div id="moats" class="tab-pane">
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-header"><span class="card-title">1. Algorithmic Moat (BitNet WGSL)</span><span class="tag tag-green">ZERO MULTIPLIERS</span></div>
+                <ul class="clean-list">
+                    <li>Replaces floating-point multipliers with pure ALU additions/subtractions.</li>
+                    <li>Packs 16 ternary weights into a single 32-bit register (70B shrinks to 13.8GB).</li>
+                    <li>OPFS direct DMA streams weights from SSD straight to GPU without GC lag.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="card-title">2. Cryptographic Proof Moat (zk-SNARK)</span><span class="tag tag-blue">SUB-0.1ms GATE</span></div>
+                <ul class="clean-list">
+                    <li>Validates edge node matrix calculations in under 0.1ms without re-running weights.</li>
+                    <li>Blocks 100% of poisoned gradients and fake updates on the coordinator.</li>
+                    <li>Laplacian Differential Privacy (epsilon = 0.8) guarantees zero data leakage.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="card-title">3. Self-Healing Mesh Moat</span><span class="tag tag-green">0.00% DATA LOSS</span></div>
+                <ul class="clean-list">
+                    <li>Dynamic DHT Ring sharding across WebRTC DataChannels with 2x redundancy.</li>
+                    <li>Node dropouts trigger automatic shard failover in under 5ms.</li>
+                    <li>Work-stealing scheduler moves stalled tasks away from throttled laptops.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="card-title">4. Regulatory & Sovereign Moat</span><span class="tag tag-blue">DPDP 2023</span></div>
+                <ul class="clean-list">
+                    <li>Air-gapped compute inside government firewalls; zero data leaves device RAM.</li>
+                    <li>Procured under GFR 2017 Rule 194 single-source innovation grants.</li>
+                    <li>Guaranteed compliance with national data localization mandates.</li>
+                </ul>
+            </div>
+
+            <div class="card" style="grid-column: span 2;">
+                <div class="card-header"><span class="card-title">5. Economic Cannibalization Moat (The Hyperscaler Trap)</span><span class="tag tag-red">UNTOUCHABLE</span></div>
+                <ul class="clean-list">
+                    <li>Legacy clouds have $50 Billion tied up in physical datacenter real estate and server racks.</li>
+                    <li>Offering zero-hardware edge execution directly destroys their own core business model.</li>
+                    <li>FlockML is an asset-light pure-software execution layer with 80%+ gross margins.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: GTM & BUSINESS MODEL -->
+    <div id="gtm" class="tab-pane">
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-header"><span class="card-title">Engine 1: B2B Sovereign Enterprise</span><span class="tag tag-green">HIGH ACV</span></div>
+                <div class="row"><span class="row-label">Target Market</span><span class="row-val">MeitY, State IT, Power Grids (CESC), Defense</span></div>
+                <div class="row"><span class="row-label">Contract Value</span><span class="row-val">₹2 Cr - ₹16 Cr ($250k - $2M / year)</span></div>
+                <div class="row"><span class="row-label">Sales Cycle</span><span class="row-val">60 - 90 Days via GFR 194 Grants</span></div>
+                <div class="lead-box" style="margin-top: 14px;">
+                    <div class="lead-label">PITCH LINE:</div>
+                    "Turn your existing fleet of 5,000 office laptops into an internal AI supercomputer overnight with $0 hardware spend."
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="card-title">Engine 2: D2C Developer & Serverless API</span><span class="tag tag-blue">GLOBAL SCALE</span></div>
+                <div class="row"><span class="row-label">Distribution</span><span class="row-val">npm install flockml, HuggingFace Integration</span></div>
+                <div class="row"><span class="row-label">API Pricing</span><span class="row-val">$0.05 per 1M Tokens (vs $0.80 on legacy clouds)</span></div>
+                <div class="row"><span class="row-label">Gross Margin</span><span class="row-val">80%+ Gross Margin via Stripe Billing</span></div>
+                <div class="lead-box" style="margin-top: 14px;">
+                    <div class="lead-label">PITCH LINE:</div>
+                    "Frontier open-source LLM inference at 1/10th the cost of cloud APIs with zero infrastructure maintenance."
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: span 2;">
+                <div class="card-header"><span class="card-title">Provider Supply Ingestion: How We Get Millions of Nodes</span><span class="tag tag-green">ZERO IDLE BURN</span></div>
+                <div class="grid-2">
+                    <div>
+                        <strong style="color: var(--text-main); font-size: 14px;">1. Enterprise Office Fleets</strong>
+                        <p style="color: var(--text-sub); font-size: 13px; margin-top: 4px;">Enterprises run the daemon on laptops between 7 PM and 7 AM to train internal models during idle hours.</p>
+                    </div>
+                    <div>
+                        <strong style="color: var(--text-main); font-size: 14px;">2. Active Utilization Payouts</strong>
+                        <p style="color: var(--text-sub); font-size: 13px; margin-top: 4px;">Unlike crypto networks that burn cash on idle standby machines, FlockML pays providers strictly for active compute cycles executed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Q&A DEFENSE -->
+    <div id="qa" class="tab-pane">
+        <div class="card">
+            <div class="card-header"><span class="card-title">The Top 6 Hard Investor Questions & Airtight Answers</span><span class="tag tag-green">REBUTTALS</span></div>
+
+            <div class="qa-box">
+                <div class="qa-q">Q1: "Isn't edge computing too slow for real-time LLM inference?"</div>
+                <div class="qa-a">For model training and batch fine-tuning, latency is secondary to 80% cost savings and zero data leakage. For real-time inference, our hierarchical pod sharding groups local devices over sub-millisecond WebRTC channels, keeping Latency to First Token under 400ms.</div>
+            </div>
+
+            <div class="qa-box">
+                <div class="qa-q">Q2: "What happens when thousands of users shut their laptops or lose internet?"</div>
+                <div class="qa-a">Our Self-Healing DHT Mesh operates with 2x redundancy. When a node heartbeat drops, our coordinator reroutes the tensor payload to an active standby node in under 5ms with zero pipeline stall, as proven in our 10,000-node chaos stress test.</div>
+            </div>
+
+            <div class="qa-box">
+                <div class="qa-q">Q3: "Why is a solo founder asking for $20M to $30M Seed?"</div>
+                <div class="qa-a">Foundational infrastructure cannot be built on small $2M checks. The core Wasm runtime, WGSL compiler, and government pilot are already built pre-seed. This capital is specifically allocated to compiler engineering hires, scaling 50 sovereign nodes, and global developer SDK distribution.</div>
+            </div>
+
+            <div class="qa-box">
+                <div class="qa-q">Q4: "What prevents Nvidia or legacy clouds from copying this?"</div>
+                <div class="qa-a">Legacy cloud providers have tens of billions of dollars tied up in physical datacenter real estate. Selling zero-hardware browser compute would directly cannibalize their core rental revenue. FlockML is an asset-light pure-software execution layer.</div>
+            </div>
+
+            <div class="qa-box">
+                <div class="qa-q">Q5: "How do you prevent malicious nodes from poisoning model weights?"</div>
+                <div class="qa-a">Every worker node must submit a cryptographic zk-SNARK hash commitment verified in under 0.1ms. The coordinator uses Coordinate-wise Median aggregation, which mathematically rejects up to 33% adversarial Byzantine nodes with zero model divergence.</div>
+            </div>
+
+            <div class="qa-box">
+                <div class="qa-q">Q6: "What is the exact status of the MeitY pilot?"</div>
+                <div class="qa-a">Following our presentation to Director Ranjan and the GM of Compute Infrastructure on July 31, we submitted the formal 4-part technical package (SOP, Architecture, Benchmarks) for a 50-node sovereign pilot connecting NIC Delhi and Webel Kolkata under GFR 194 innovation rules.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 5: PSYCHOLOGICAL RULES -->
+    <div id="rules" class="tab-pane">
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-header"><span class="card-title">Presentation Rules for Monday</span><span class="tag tag-red">STRICT</span></div>
+                <ul class="clean-list">
+                    <li><strong>No Hype Words:</strong> Eliminate words like "revolutionary" or "magical". Use exact numbers (80.2% VRAM reduction, 4.35ms failover).</li>
+                    <li><strong>No Competitor Bashing:</strong> Refer to hyperscalers as "Legacy Cloud Monopolies" or "Centralized Datacenters". Focus on economic arbitrage.</li>
+                    <li><strong>Control the Pace:</strong> Speak 10% slower than usual. Pausing after a technical point conveys total authority.</li>
+                    <li><strong>Do Not Over-Explain:</strong> Deliver the crisp 3-sentence technical answer and STOP. Let the partner ask the follow-up.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="card-title">Fatal Landmines to Avoid</span><span class="tag tag-red">WARNINGS</span></div>
+                <ul class="clean-list">
+                    <li><strong>No Crypto/Web3 Traps:</strong> If asked about tokens, state clearly: "We use standard fiat Stripe and sovereign enterprise billing. No crypto tokens."</li>
+                    <li><strong>No Solo Founder Apologies:</strong> "I have built the core runtime, Wasm compiler, and government submission myself. We are raising this round specifically to hire the world's top compiler engineers."</li>
+                    <li><strong>Never Negotiate Round Size Live:</strong> "We are structuring $20M to $30M with a strong syndicate. Anicut can anchor $15M-$20M and lead the round."</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setTab(tabId) {
+            document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

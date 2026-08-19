@@ -1,0 +1,23 @@
+{
+  "name": "flockml-sovereign",
+  "version": "1.0.0",
+  "description": "FlockML Sovereign AI Decentralized Compute & Inference Engine",
+  "scripts": {
+    "demo": "npx tsx scripts/run_investor_lan_demo.ts",
+    "demo:investor": "npx tsx scripts/run_investor_lan_demo.ts",
+    "demo:cesc": "npx tsx scripts/run_cesc_substation_demo.ts",
+    "studio": "npx tsx scripts/interactive_inference_cli.ts",
+    "cli": "npx tsx scripts/interactive_inference_cli.ts",
+    "test:inference": "npx tsx scripts/test_local_anicut_inference.ts",
+    "coordinator": "cd coordinator && npm run dev"
+  },
+  "keywords": [
+    "flockml",
+    "decentralized-ai",
+    "webgpu",
+    "inference-cloud",
+    "sovereign-ai"
+  ],
+  "author": "Supratim Dhara",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlockML x CESC — 7-Day & 14-Day Pilot Protocol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #080808;
+      --raised: #040404;
+      --border: #1A1A1A;
+      --border-s: #111111;
+      --t1: #FFFFFF;
+      --t2: #999999;
+      --t3: #666666;
+      --t4: #444444;
+      --blue: #3B82F6;
+      --green: #34D399;
+      --gold: #FBBF24;
+      --red: #F87171;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--t1);
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.6;
+      padding: 40px 24px;
+      max-width: 1040px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .subhead {
+      font-size: 14px;
+      color: var(--t2);
+      margin-top: 4px;
+    }
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--t3);
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--t1);
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-s);
+      letter-spacing: -0.3px;
+    }
+    p {
+      color: var(--t2);
+      font-size: 14.5px;
+      margin-bottom: 14px;
+      line-height: 1.65;
+    }
+    p strong, li strong { color: var(--t1); }
+    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 16px 0; }
+    .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 16px 0; }
+    .g4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+    .c {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .c-t {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--t3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .c-v {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--t1);
+      margin-bottom: 4px;
+    }
+    .c-vs {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--t3);
+      margin-bottom: 8px;
+    }
+    .c-b {
+      font-size: 13px;
+      color: var(--t2);
+      line-height: 1.55;
+    }
+    .mono-box {
+      background: var(--raised);
+      border: 1px solid var(--border);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      color: #E2E8F0;
+      line-height: 1.7;
+      margin: 16px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 13.5px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      text-align: left;
+    }
+    th {
+      background: var(--surface);
+      color: var(--t3);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td { color: var(--t2); }
+    ul, ol { margin-left: 20px; margin-bottom: 16px; color: var(--t2); font-size: 14px; }
+    li { margin-bottom: 8px; }
+    .quote-block {
+      border-left: 2px solid var(--t1);
+      padding-left: 16px;
+      font-size: 15px;
+      color: var(--t1);
+      margin: 18px 0;
+      line-height: 1.6;
+    }
+    .footer {
+      border-top: 1px solid var(--border-s);
+      padding-top: 16px;
+      margin-top: 40px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--t4);
+      display: flex;
+      justify-content: space-between;
+    }
+    @media print {
+      body { background: #000000 !important; color: #FFFFFF !important; padding: 20px; }
+      .c, .mono-box, th { background: #080808 !important; border-color: #222 !important; }
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <div>
+      <div class="brand">FLOCKML &times; CESC / RPSG GROUP</div>
+      <div class="subhead">Technical Pilot Protocol: 7-Day &amp; 14-Day Zero-Risk Substation Evaluation</div>
+    </div>
+    <div class="tag">PILOT PROTOCOL</div>
+  </header>
+
+  <h2>1. Scope &amp; Safety Guarantees</h2>
+  <p>
+    The pilot is engineered to run in <strong>passive, read-only shadow mode</strong> on 5 to 10 idle office/substation PCs across Kolkata (e.g. Chowringhee HQ, Salt Lake Sector V, Howrah). It requires <strong>zero new hardware</strong> and has <strong>zero write-access to live electrical breakers or SCADA actuation controls</strong>.
+  </p>
+
+  <div class="quote-block">
+    <strong>Zero-Interference Guarantee:</strong> FlockML runs inside memory-safe WebGPU/WASM browser workers. It does not install kernel drivers, does not alter operating system files, and consumes less than 15% CPU during active daytime operator shifts.
+  </div>
+
+  <h2>2. Day-by-Day Pilot Execution Roadmap</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Timeline</th>
+        <th>Phase Name</th>
+        <th>Operational Action Items</th>
+        <th>Success Metric / Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Days 1 – 2</strong></td>
+        <td>Zero-Risk Setup</td>
+        <td>Deploy FlockML lightweight worker on 5–10 idle test PCs across internal LAN. Establish read-only telemetry mirror connection.</td>
+        <td>100% node registration, zero firewall or network interference.</td>
+      </tr>
+      <tr>
+        <td><strong>Days 3 – 5</strong></td>
+        <td>Telemetry Ingestion</td>
+        <td>Ingest sample smart meter streams / transformer thermal telemetry. Run localized peak load forecast and phase balancing inference.</td>
+        <td>Telemetry forward pass latency &lt; 700ms; forecast accuracy &gt; 98.5%.</td>
+      </tr>
+      <tr>
+        <td><strong>Day 6</strong></td>
+        <td>Chaos &amp; Resilience Test</td>
+        <td>Intentionally disconnect 1 substation PC to simulate fiber cut / power outage. Verify work-stealing topology rebalance.</td>
+        <td>Sub-5ms automatic failover with <strong>zero dropped packets</strong>.</td>
+      </tr>
+      <tr>
+        <td><strong>Day 7</strong></td>
+        <td>Executive Audit Presentation</td>
+        <td>Generate and present complete <strong>Executive Audit &amp; Cost Reduction Report</strong> to Subir Verma and Group CTO.</td>
+        <td>Formal decision gate to initiate commercial contract / group rollout.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Verified Benchmark Targets</h2>
+  <div class="g3">
+    <div class="c">
+      <div class="c-t">TARGET 01 &middot; SPEED</div>
+      <div class="c-v">&lt; 700 ms</div>
+      <div class="c-vs">LOCALIZED INFERENCE PASS</div>
+      <div class="c-b">Processes 50,000 telemetry readings across distributed substation hardware in under 1 second.</div>
+    </div>
+    <div class="c">
+      <div class="c-t">TARGET 02 &middot; FAILOVER</div>
+      <div class="c-v">&lt; 5.0 ms</div>
+      <div class="c-vs">SUBSTATION WORK-STEALING</div>
+      <div class="c-b">Guarantees high-availability fault tolerance during unexpected hardware or fiber drops.</div>
+    </div>
+    <div class="c">
+      <div class="c-t">TARGET 03 &middot; COST</div>
+      <div class="c-v">~70%</div>
+      <div class="c-vs">OPEX REDUCTION VS AWS</div>
+      <div class="c-b">Proves tangible cost elimination vs. equivalent centralized cloud GPU hosting.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>FLOCKML &times; CESC / RPSG GROUP</span>
+    <span>CONFIDENTIAL &middot; PILOT PROTOCOL</span>
+  </div>
+
+
+</body>
+</html>

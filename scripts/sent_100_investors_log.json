@@ -1,0 +1,502 @@
+{
+  "jj@oss.capital": {
+    "name": "Joseph Jacks",
+    "firm": "OSS Capital",
+    "timestamp": "2026-08-18 14:41:31"
+  },
+  "nathan@airstreet.com": {
+    "name": "Nathan Benaich",
+    "firm": "Air Street Capital",
+    "timestamp": "2026-08-18 14:43:53"
+  },
+  "elad@lunar.vc": {
+    "name": "Elad Verbin",
+    "firm": "Lunar Ventures",
+    "timestamp": "2026-08-18 14:46:09"
+  },
+  "gabriel@fly.vc": {
+    "name": "Gabriel Matuschka",
+    "firm": "Fly Ventures",
+    "timestamp": "2026-08-18 14:48:27"
+  },
+  "kevin@calibratevc.com": {
+    "name": "Kevin Dunlap",
+    "firm": "Calibrate Ventures",
+    "timestamp": "2026-08-18 14:50:38"
+  },
+  "rokas@cventures.vc": {
+    "name": "Rokas Peciulaitis",
+    "firm": "Contrarian Ventures",
+    "timestamp": "2026-08-18 14:52:49"
+  },
+  "rob@tinyseed.com": {
+    "name": "Rob Walling",
+    "firm": "TinySeed",
+    "timestamp": "2026-08-18 14:55:06"
+  },
+  "mohamed@mozilla.vc": {
+    "name": "Mohamed Nanabhay",
+    "firm": "Mozilla Ventures",
+    "timestamp": "2026-08-18 14:57:16"
+  },
+  "carlos@seedcamp.com": {
+    "name": "Carlos Espinal",
+    "firm": "Seedcamp",
+    "timestamp": "2026-08-18 14:59:30"
+  },
+  "christoph@pointnine.com": {
+    "name": "Christoph Janz",
+    "firm": "Point Nine Capital",
+    "timestamp": "2026-08-18 15:01:46"
+  },
+  "fred@speedinvest.com": {
+    "name": "Fred Hagenauer",
+    "firm": "Speedinvest",
+    "timestamp": "2026-08-18 15:04:03"
+  },
+  "jean@kimaventures.com": {
+    "name": "Jean de La Rochebrochard",
+    "firm": "Kima Ventures",
+    "timestamp": "2026-08-18 15:06:16"
+  },
+  "rouven@cavalry.vc": {
+    "name": "Rouven Dresselhaus",
+    "firm": "Cavalry Ventures",
+    "timestamp": "2026-08-18 15:08:34"
+  },
+  "andreas@firstmomentum.vc": {
+    "name": "Andreas Goeldi",
+    "firm": "First Momentum Ventures",
+    "timestamp": "2026-08-18 15:10:52"
+  },
+  "mehmet@earlybird.com": {
+    "name": "Mehmet Atici",
+    "firm": "Earlybird Uni-X",
+    "timestamp": "2026-08-18 15:13:02"
+  },
+  "charles@precursorvc.com": {
+    "name": "Charles Hudson",
+    "firm": "Precursor Ventures",
+    "timestamp": "2026-08-18 15:15:17"
+  },
+  "elizabeth@hustlefund.vc": {
+    "name": "Elizabeth Yin",
+    "firm": "Hustle Fund",
+    "timestamp": "2026-08-18 15:17:35"
+  },
+  "wei@unusual.vc": {
+    "name": "Wei Lien Dang",
+    "firm": "Unusual Ventures",
+    "timestamp": "2026-08-18 15:19:45"
+  },
+  "ed@boldstart.vc": {
+    "name": "Ed Sim",
+    "firm": "Boldstart Ventures",
+    "timestamp": "2026-08-18 15:21:58"
+  },
+  "gil@angularventures.com": {
+    "name": "Gil Dibner",
+    "firm": "Angular Ventures",
+    "timestamp": "2026-08-18 15:24:19"
+  },
+  "matt@joinef.com": {
+    "name": "Matt Clifford",
+    "firm": "Entrepreneur First",
+    "timestamp": "2026-08-18 15:26:39"
+  },
+  "ruchi@southparkcommons.com": {
+    "name": "Ruchi Sanghvi",
+    "firm": "South Park Commons",
+    "timestamp": "2026-08-18 15:28:52"
+  },
+  "dave@hf0.com": {
+    "name": "Dave Fontenot",
+    "firm": "HF0",
+    "timestamp": "2026-08-18 15:31:10"
+  },
+  "team@pioneer.app": {
+    "name": "Jason Graystone",
+    "firm": "Pioneer Fund",
+    "timestamp": "2026-08-18 15:33:23"
+  },
+  "apostolos@venturefriends.vc": {
+    "name": "Apostolos Apostolakis",
+    "firm": "VentureFriends",
+    "timestamp": "2026-08-18 15:35:40"
+  },
+  "krishna@crane.vc": {
+    "name": "Krishna Visvanathan",
+    "firm": "Crane Venture Partners",
+    "timestamp": "2026-08-18 15:37:55"
+  },
+  "will@frontline.vc": {
+    "name": "Will Prendergast",
+    "firm": "Frontline Ventures",
+    "timestamp": "2026-08-18 15:40:16"
+  },
+  "roberto@inreachventures.com": {
+    "name": "Roberto Bonanzinga",
+    "firm": "InReach Ventures",
+    "timestamp": "2026-08-18 15:42:35"
+  },
+  "robin@localglobe.vc": {
+    "name": "Robin Klein",
+    "firm": "LocalGlobe",
+    "timestamp": "2026-08-18 15:44:47"
+  },
+  "pietro@connectventures.co": {
+    "name": "Pietro Bezza",
+    "firm": "Connect Ventures",
+    "timestamp": "2026-08-18 15:47:02"
+  },
+  "hector@episode1.com": {
+    "name": "Hector Mason",
+    "firm": "Episode 1 Ventures",
+    "timestamp": "2026-08-18 15:49:15"
+  },
+  "andrei@mmc.vc": {
+    "name": "Andrei Dvornic",
+    "firm": "MMC Ventures",
+    "timestamp": "2026-08-18 15:51:26"
+  },
+  "chris@playfaircapital.com": {
+    "name": "Chris Smith",
+    "firm": "Playfair Capital",
+    "timestamp": "2026-08-18 15:53:40"
+  },
+  "oliver@conceptventures.vc": {
+    "name": "Oliver Kicks",
+    "firm": "Concept Ventures",
+    "timestamp": "2026-08-18 15:56:01"
+  },
+  "ralf@firstcheck.vc": {
+    "name": "Ralf Glabischnig",
+    "firm": "First Check Ventures",
+    "timestamp": "2026-08-18 15:58:14"
+  },
+  "veljo@superangel.io": {
+    "name": "Veljo Otsason",
+    "firm": "Superangel",
+    "timestamp": "2026-08-18 16:00:37"
+  },
+  "margus@karma.vc": {
+    "name": "Margus Uudam",
+    "firm": "Karma Ventures",
+    "timestamp": "2026-08-18 16:02:47"
+  },
+  "aleksi@icebreaker.vc": {
+    "name": "Aleksi Partanen",
+    "firm": "Icebreaker.vc",
+    "timestamp": "2026-08-18 16:05:01"
+  },
+  "michal@inovo.vc": {
+    "name": "Michal Rokosz",
+    "firm": "Inovo.vc",
+    "timestamp": "2026-08-18 16:07:35"
+  },
+  "andrin@pitoncap.com": {
+    "name": "Andrin Bachmann",
+    "firm": "Piton Capital",
+    "timestamp": "2026-08-18 16:09:55"
+  },
+  "ghaith@byvp.com": {
+    "name": "Ghaith Yafi",
+    "firm": "B&Y Ventures",
+    "timestamp": "2026-08-18 16:12:09"
+  },
+  "max@vitosha.vc": {
+    "name": "Max Gurvits",
+    "firm": "Vitosha Venture Partners",
+    "timestamp": "2026-08-18 16:14:24"
+  },
+  "todor@launchub.vc": {
+    "name": "Todor Breshkov",
+    "firm": "LAUNCHub Ventures",
+    "timestamp": "2026-08-18 16:16:37"
+  },
+  "alex@founderful.com": {
+    "name": "Alex St\u00f6ckl",
+    "firm": "Founderful",
+    "timestamp": "2026-08-18 16:18:50"
+  },
+  "peter@redalpine.com": {
+    "name": "Peter Niederhauser",
+    "firm": "Redalpine",
+    "timestamp": "2026-08-18 16:21:04"
+  },
+  "christophe@atlanticlabs.de": {
+    "name": "Christophe Maire",
+    "firm": "Atlantic Labs",
+    "timestamp": "2026-08-18 16:23:16"
+  },
+  "uwe@project-a.com": {
+    "name": "Uwe Horstmann",
+    "firm": "Project A Ventures",
+    "timestamp": "2026-08-18 16:25:26"
+  },
+  "robert@lafamiglia.vc": {
+    "name": "Robert Lacher",
+    "firm": "La Famiglia",
+    "timestamp": "2026-08-18 16:27:43"
+  },
+  "sascha@system.one": {
+    "name": "Sascha Konietzke",
+    "firm": "System.One",
+    "timestamp": "2026-08-18 16:30:02"
+  },
+  "sam@blackbird.vc": {
+    "name": "Samantha Wong",
+    "firm": "Blackbird Ventures",
+    "timestamp": "2026-08-18 16:32:16"
+  },
+  "tushar@squarepegcap.com": {
+    "name": "Tushar Roy",
+    "firm": "Square Peg Capital",
+    "timestamp": "2026-08-18 16:34:31"
+  },
+  "charlie@investible.com": {
+    "name": "Charlie Kairouz",
+    "firm": "Investible",
+    "timestamp": "2026-08-18 16:36:47"
+  },
+  "shane@shorooq.com": {
+    "name": "Shane Shin",
+    "firm": "Shorooq Partners",
+    "timestamp": "2026-08-18 16:39:32"
+  },
+  "tommy@byfounders.vc": {
+    "name": "Tommy Andersen",
+    "firm": "byFounders",
+    "timestamp": "2026-08-18 18:44:40"
+  },
+  "amir@cotu.ventures": {
+    "name": "Amir Farha",
+    "firm": "COTU Ventures",
+    "timestamp": "2026-08-18 18:46:56"
+  },
+  "yousef@becocapital.com": {
+    "name": "Yousef Hammad",
+    "firm": "BECO Capital",
+    "timestamp": "2026-08-18 18:49:13"
+  },
+  "khaled@nuwacapital.io": {
+    "name": "Khaled Talhouni",
+    "firm": "Nuwa Capital",
+    "timestamp": "2026-08-18 18:51:30"
+  },
+  "vinnie@goldengate.vc": {
+    "name": "Vinnie Lauria",
+    "firm": "Golden Gate Ventures",
+    "timestamp": "2026-08-18 18:53:47"
+  },
+  "willson@east.vc": {
+    "name": "Willson Cuaca",
+    "firm": "East Ventures",
+    "timestamp": "2026-08-18 18:56:07"
+  },
+  "paul@wavemaker.vc": {
+    "name": "Paul Santos",
+    "firm": "Wavemaker Partners",
+    "timestamp": "2026-08-18 18:58:23"
+  },
+  "yinglan@insignia.vc": {
+    "name": "Tan Yinglan",
+    "firm": "Insignia Ventures",
+    "timestamp": "2026-08-18 19:00:45"
+  },
+  "peng@monkshill.com": {
+    "name": "Peng T. Ong",
+    "firm": "Monk's Hill Ventures",
+    "timestamp": "2026-08-18 19:03:02"
+  },
+  "heang@qualgro.com": {
+    "name": "Heang Chhor",
+    "firm": "Qualgro VC",
+    "timestamp": "2026-08-18 19:05:15"
+  },
+  "avi@entreecapital.com": {
+    "name": "Avi Eyal",
+    "firm": "Entr\u00e9e Capital",
+    "timestamp": "2026-08-18 19:11:47"
+  },
+  "jonathan@f2vc.com": {
+    "name": "Jonathan Saacks",
+    "firm": "F2 Venture Capital",
+    "timestamp": "2026-08-18 19:15:14"
+  },
+  "judah@hetz.vc": {
+    "name": "Judah Taub",
+    "firm": "Hetz Ventures",
+    "timestamp": "2026-08-18 19:17:51"
+  },
+  "lotan@grovevc.com": {
+    "name": "Lotan Levkowitz",
+    "firm": "Grove Ventures",
+    "timestamp": "2026-08-18 19:20:04"
+  },
+  "tal@stageone.vc": {
+    "name": "Tal Slobodkin",
+    "firm": "StageOne Ventures",
+    "timestamp": "2026-08-18 19:22:25"
+  },
+  "feross@feross.org": {
+    "name": "Feross Aboukhadijeh",
+    "firm": "Open-Source Angel",
+    "timestamp": "2026-08-18 19:24:40"
+  },
+  "evan@evanyou.me": {
+    "name": "Evan You",
+    "firm": "Open-Source Angel",
+    "timestamp": "2026-08-18 19:26:57"
+  },
+  "tj@apex.sh": {
+    "name": "TJ Holowaychuk",
+    "firm": "Open-Source Angel",
+    "timestamp": "2026-08-18 19:29:11"
+  },
+  "sindresorhus@gmail.com": {
+    "name": "Sindre Sorhus",
+    "firm": "Open-Source Angel",
+    "timestamp": "2026-08-18 19:31:26"
+  },
+  "matteo.collina@gmail.com": {
+    "name": "Matteo Collina",
+    "firm": "Open-Source Angel",
+    "timestamp": "2026-08-18 19:33:45"
+  },
+  "ceberhardt@scottlogic.com": {
+    "name": "Colin Eberhardt",
+    "firm": "Open-Source Angel",
+    "timestamp": "2026-08-18 19:36:02"
+  },
+  "kevin@antimetal.com": {
+    "name": "Kevin Kwok",
+    "firm": "Open-Source Angel",
+    "timestamp": "2026-08-18 19:38:33"
+  },
+  "vaibhav@bettercapital.vc": {
+    "name": "Vaibhav Domkundwar",
+    "firm": "Better Capital",
+    "timestamp": "2026-08-18 19:40:49"
+  },
+  "sanjay@100x.vc": {
+    "name": "Sanjay Mehta",
+    "firm": "100X.VC",
+    "timestamp": "2026-08-18 19:43:11"
+  },
+  "adith@gembacapital.in": {
+    "name": "Adith Poddar",
+    "firm": "Gemba Capital",
+    "timestamp": "2026-08-18 19:45:26"
+  },
+  "prateek@firstcheque.vc": {
+    "name": "Prateek Agarwal",
+    "firm": "First Cheque",
+    "timestamp": "2026-08-18 19:47:41"
+  },
+  "anirudh@arthavc.com": {
+    "name": "Anirudh A Damani",
+    "firm": "Artha Venture Fund",
+    "timestamp": "2026-08-18 19:49:53"
+  },
+  "mandar@pointonecapital.com": {
+    "name": "Mandar Dandekar",
+    "firm": "PointOne Capital",
+    "timestamp": "2026-08-18 19:52:06"
+  },
+  "anurakt@klubworks.com": {
+    "name": "Anurakt Jain",
+    "firm": "Klub Works",
+    "timestamp": "2026-08-18 19:54:18"
+  },
+  "apoorva@venturecatalysts.in": {
+    "name": "Dr. Apoorva Ranjan Sharma",
+    "firm": "9Unicorns",
+    "timestamp": "2026-08-18 19:56:29"
+  },
+  "sushil@marwaricatalysts.com": {
+    "name": "Sushil Sharma",
+    "firm": "Marwari Catalysts",
+    "timestamp": "2026-08-18 19:58:43"
+  },
+  "devendra@dexterangels.com": {
+    "name": "Devendra Agrawal",
+    "firm": "Dexter Angels",
+    "timestamp": "2026-08-18 20:01:01"
+  },
+  "sushanto@leadangels.com": {
+    "name": "Sushanto Mitra",
+    "firm": "Lead Angels Network",
+    "timestamp": "2026-08-18 20:03:10"
+  },
+  "rajat@jiif.in": {
+    "name": "Rajat Mehta",
+    "firm": "JITO JIIF",
+    "timestamp": "2026-08-18 20:05:24"
+  },
+  "harshad@ahventures.in": {
+    "name": "Harshad Lahoti",
+    "firm": "Ah! Ventures",
+    "timestamp": "2026-08-18 20:07:34"
+  },
+  "vikrant@sucseedindovation.com": {
+    "name": "Vikrant Varshney",
+    "firm": "SucSEED Indovation Fund",
+    "timestamp": "2026-08-18 20:09:46"
+  },
+  "dinesh@faad.net": {
+    "name": "Dinesh Singh",
+    "firm": "Faad Network",
+    "timestamp": "2026-08-18 20:12:02"
+  },
+  "neeraj@wefoundercircle.com": {
+    "name": "Neeraj Tyagi",
+    "firm": "We Founder Circle",
+    "timestamp": "2026-08-18 20:14:12"
+  },
+  "rahul@bima-pe.com": {
+    "name": "Rahul Mathur",
+    "firm": "Micro Angel",
+    "timestamp": "2026-08-18 20:16:25"
+  },
+  "tanmay@superteam.fun": {
+    "name": "Tanmay Bhat",
+    "firm": "Micro Angel",
+    "timestamp": "2026-08-18 20:18:38"
+  },
+  "varun@avalonlabs.co": {
+    "name": "Varun Mayya",
+    "firm": "Micro Angel",
+    "timestamp": "2026-08-18 20:20:49"
+  },
+  "ishan@markitup.in": {
+    "name": "Ishan Sharma",
+    "firm": "Micro Angel",
+    "timestamp": "2026-08-18 20:23:00"
+  },
+  "suumit@mydukaan.io": {
+    "name": "Suumit Shah",
+    "firm": "Micro Angel",
+    "timestamp": "2026-08-18 20:25:09"
+  },
+  "paras@wingify.com": {
+    "name": "Paras Chopra",
+    "firm": "Micro Angel",
+    "timestamp": "2026-08-18 20:27:21"
+  },
+  "pallav@fusioncharts.com": {
+    "name": "Pallav Nadhani",
+    "firm": "Micro Angel",
+    "timestamp": "2026-08-18 20:29:32"
+  },
+  "abhishek@indusnet.co.in": {
+    "name": "Abhishek Rungta",
+    "firm": "Micro Angel",
+    "timestamp": "2026-08-18 20:31:55"
+  },
+  "subhrangshu@gmail.com": {
+    "name": "Subhrangshu Neogi",
+    "firm": "Micro Angel",
+    "timestamp": "2026-08-18 20:34:06"
+  }
+}
