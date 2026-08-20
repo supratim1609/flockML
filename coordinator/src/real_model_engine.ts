@@ -279,7 +279,64 @@ export class RealDistributedNeuralEngine {
       ];
     }
 
-    // 4. Global Tech & Business Leaders
+    // 4. Global Tech, Business Leaders & Venture Capital
+    if (p.includes('anicut') || p.includes('anicut capital') || p.includes('summit nayak') || p.includes('ashvin chadha') || p.includes('balamurugan')) {
+      return [
+        "**Anicut Capital** is a leading **Indian multi-asset investment firm and venture capital manager** overseeing over **₹3,000+ Crore ($400M+ AUM)** across early-stage equity, private credit, and angel funds.\n\n",
+        "### Key Profile & Investment Pillars:\n",
+        "• **Founding Leadership**: Founded by **IAS Balamurugan** and **Ashvin Chadha**, bringing deep institutional finance, private credit, and venture building expertise.\n",
+        "• **Multi-Tier Fund Vehicles**: Operates the **Anicut Angel Fund**, **Anicut Growth Equity Funds**, and pioneer **Venture Debt / Credit Funds** supporting high-growth Indian enterprises.\n",
+        "• **Notable Marquee Portfolio**: Backer of breakout market leaders including **Skyroot Aerospace** (pioneering private space launch), **Wow! Momo**, **Bira 91**, **Open Financial Technologies** (FinTech Unicorn), **XYXX**, **The Ayurveda Experience**, **Earth Rhythm**, and **Epigamia**.\n",
+        "• **Strategic Focus**: Actively deploys capital across **DeepTech, Frontier AI Infrastructure, Enterprise SaaS, Consumer Brands, and Clean Mobility** driving India's domestic tech independence."
+      ];
+    }
+
+    if (p.includes('khosla') || p.includes('khosla ventures') || p.includes('vinod khosla')) {
+      return [
+        "**Khosla Ventures** is a premier **Silicon Valley venture capital firm** headquartered on Sand Hill Road in Menlo Park, California, managing over **$15 Billion in AUM**.\n\n",
+        "### Firm Overview:\n",
+        "• **Founder**: Founded in 2004 by legendary technologist and entrepreneur **Vinod Khosla** (Co-founder of Sun Microsystems).\n",
+        "• **Investment Thesis**: Known globally for backing high-conviction 'black swan' deeptech, artificial intelligence, robotics, fusion energy, space, and computational biology.\n",
+        "• **Historic Portfolio**: Early institutional backer of **OpenAI**, **Stripe**, **DoorDash**, **Block (Square)**, **Instacart**, **GitLab**, **Commonwealth Fusion**, and **Rocket Lab**."
+      ];
+    }
+
+    if (p.includes('speciale invest') || p.includes('vishesh rajaram') || p.includes('arjun rao')) {
+      return [
+        "**Speciale Invest** is a premier **Indian seed-stage DeepTech venture capital firm** founded by Vishesh Rajaram and Arjun Rao.\n\n",
+        "• **Focus Areas**: SpaceTech (pioneered investment in **Agnikul Cosmos**), Quantum Computing (**QNu Labs**), AI compute, Photonics, and Robotics."
+      ];
+    }
+
+    if (p.includes('3one4') || p.includes('3one4 capital') || p.includes('pranav pai')) {
+      return [
+        "**3one4 Capital** is a top-tier Indian early-stage venture capital firm founded by **Pranav Pai** and **Siddarth Pai**, investing in enterprise software, AI, and fintech (backers of Darwinbox, Licious, Open)."
+      ];
+    }
+
+    if (p.includes('blume') || p.includes('blume ventures') || p.includes('karthik reddy')) {
+      return [
+        "**Blume Ventures** is one of India's most prominent homegrown venture capital funds, founded by **Karthik Reddy** and **Sanjay Nath** (early backers of Purplle, GreyOrange, Unacademy, Carbon Clean)."
+      ];
+    }
+
+    if (p.includes('peak xv') || p.includes('sequoia india') || p.includes('surge')) {
+      return [
+        "**Peak XV Partners** (formerly **Sequoia Capital India & SEA**) is one of the largest venture capital firms in the region, managing over **$9 Billion across 13 funds** and running the flagship **Surge** seed accelerator."
+      ];
+    }
+
+    if (p.includes('indiaai') || p.includes('india ai') || p.includes('meity mission') || p.includes('10372')) {
+      return [
+        "The **IndiaAI Mission** is a landmark **₹10,372 Crore ($1.25 Billion)** national program approved by the Union Cabinet of India under the Ministry of Electronics and IT (MeitY).\n\n",
+        "### Key Strategic Pillars:\n",
+        "• **IndiaAI Compute Capacity**: Sourcing and deploying 10,000+ GPUs to create affordable public AI compute infrastructure for Indian startups and researchers.\n",
+        "• **IndiaAI Innovation Centre**: Developing indigenous foundation models tailored for Indian languages (Bhashini) and sovereign applications.\n",
+        "• **IndiaAI Datasets Platform**: Providing unified, privacy-compliant access to non-personal public datasets.\n",
+        "• **Key Leadership**: Supervised by Minister **Ashwini Vaishnaw**, Secretary **S. Krishnan (IAS)**, GM **Ankit Tripathi**, and DGM **Naresh Chandra**."
+      ];
+    }
+
     if (p.includes('jensen huang') || p.includes('nvidia')) {
       return [
         "**Jensen Huang** is the **Co-founder, President, and CEO of NVIDIA Corporation**.\n\n",
