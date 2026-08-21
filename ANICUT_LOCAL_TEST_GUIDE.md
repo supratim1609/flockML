@@ -51,4 +51,4 @@ npm run studio
 * **Node Mesh Socket**: `ws://localhost:8080/nodes/connect`
 
 ---
-*Questions or Technical Inquiries: Supratim Dhara (Founder & Chief Architect, FlockML) · +91 91237 02447 · supratim@flockml.com*
+*Questions or Technical Inquiries: Supratim Dhara (Founder & Chief Architect, FlockML) · +91 82403 56758 · supratimdhara0@gmail.com*
